@@ -1,4 +1,5 @@
 ## torch
+### torch
 #### torch.mean
 【时间】11/11
 ``` python
