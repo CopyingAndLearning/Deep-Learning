@@ -28,8 +28,6 @@ BackBone的目的是为了提取数据，比如VIT使用的Transformer来抽取�
 
 Neck的目的是进一步融合信息，例如U-Net网络中的多特征融合思路和各种魔改的注意力机制等，使模型对于数据特征的整合更好；
 
-[torch.md](https://github.com/user-attachments/files/17702475/torch.md)
 Head的目的是确定下游任务，例如线性回归就接全连接层、图像分割就接卷积层等，通过设计不同的任务和特殊设计（根据数据集设计的）的损失函数来完成对应的下游任务；
 
 - So, Take an open-source project frist thing we should to do is to recognize which of the four sections above does each section belong to.
-[torch.md](https://github.com/user-attachments/files/17702486/torch.md)
