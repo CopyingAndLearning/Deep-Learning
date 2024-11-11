@@ -19,7 +19,6 @@ print(mean_value.shape)  # 输出一个标量值 # (2,4)
 ## paper&网络
 #### 网络的组成
 【时间】11/11
-[!CAUTION]
 - 一般认为神经网络是由BackBone\Neck\Head组成，但我认为神经网络可由Limb\Backbone\Neck、head组成
 
 其中：
