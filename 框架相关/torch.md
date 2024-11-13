@@ -31,3 +31,4 @@ Neck的目的是进一步融合信息，例如U-Net网络中的多特征融合�
 Head的目的是确定下游任务，例如线性回归就接全连接层、图像分割就接卷积层等，通过设计不同的任务和特殊设计（根据数据集设计的）的损失函数来完成对应的下游任务；
 
 - So, Take an open-source project frist thing we should to do is to recognize which of the four sections above does each section belong to.
+
