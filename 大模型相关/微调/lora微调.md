@@ -80,6 +80,8 @@ class LoRALinear(nn.Module):
             return self.dropout(self.linear(x))
 ```
 
+`lora时机：`在模型训练中使用LoRA（Low-Rank Adaptation）进行微调，应该放在模型训练的初始化阶段之后，具体训练步骤开始之前。
+
 ##### 对小白解释
 
 - [ ] Q&A
