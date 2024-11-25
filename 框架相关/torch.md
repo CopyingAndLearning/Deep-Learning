@@ -32,3 +32,8 @@ Head的目的是确定下游任务，例如线性回归就接全连接层、图�
 
 - So, Take an open-source project frist thing we should to do is to recognize which of the four sections above does each section belong to.
 
+
+
+#### 维度变化
+
+* 学会定位维度是如何发生变化的

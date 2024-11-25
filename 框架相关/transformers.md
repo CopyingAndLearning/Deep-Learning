@@ -46,7 +46,7 @@ model = DetrModel(config)
 
 `理解：`目标检测网络的微调，只需要修改分类网络即可；要修改特定的头部，特定的头部可以通过定位的方法解决；
 
-`步骤：`①使用dir找到目标检测网络的最后一层，通常是class_label结尾的（或者是查看网络结构）；②修改为自己想要的输出层即可；③准备对应类型的数据集；
+`步骤：`①使用dir找到目标检测网络的最后一层，通常是class_label结尾的（或者是查看网络结构）；②修改为自己想要的输出层即可；③准备对应类型的数据集（比如：CoCo类型或XML类型）；
 
 ``` python
 print(model)    # 打印模型的网络结构
@@ -56,5 +56,49 @@ print(list(model.children())[-2])    # 获取模型最后的一个元素
 
 
 
+### 11/19
+
+- [ ] 建议直接使用hugging_face的load_dataset加载
+
 ##### XML转为COCO数据集
 
+`疑惑：`
+
+- [ ] 怎么转？转了之后如何让Transformers库进行使用？
+- [ ] coco数据集有多个类别，分为检测、分割等；
+
+`步骤：`
+
+`之后：`创建对应的dataloader
+
+
+
+##### 数据集后缀名
+
+`.parquet:`是数据集的后缀
+
+
+
+##### 创建parquet数据集
+
+`数据格式：`目标检测的coco数据集；parquet数据集可以存储对应的二进制数据；
+
+``` json
+{
+    'image_id': 366, 
+    'image': <PIL.PngImagePlugin.PngImageFile image mode=RGBA size=500x290 at 0x201F696C6A0>,
+    'width': 500, 
+    'height': 500, 
+    'objects': 
+    {
+    	'id': [1932, 1933, 1934],
+		'area': [27063, 34200, 32431],
+		'bbox': [[29.0, 11.0, 97.0, 279.0], [201.0, 1.0, 120.0, 285.0], [382.0, 0.0, 113.0, 287.0]],
+		'category': [0, 0, 0]
+	}
+}
+```
+
+`xml2parquet:`
+
+步骤：①创建对应parquet数据集；②one-hot编码；③区域(area)的连续性；
